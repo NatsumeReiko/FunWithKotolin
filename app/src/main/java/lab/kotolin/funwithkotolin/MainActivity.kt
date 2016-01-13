@@ -19,35 +19,42 @@ class MainActivity : AppCompatActivity() {
         c = 1       // definite assignment
 
         hello.text = "Hello Kotlin !!" + ifexpression(3, 9)
+//        rangeTest();
 
-        printSum(4, 8)
+        buildStyle();
+//        forSentence();
+//        whenExpression(1)
+//        whenExpression("1")
+//        whenExpression("hello")
 
-        nullCheck();
-
-        makeDate();
-
-        try {
-            questionMark("dfadefas")
-            questionMark(null)
-
-        } catch(ex: Exception) {
-            Log.d("test", "bbbrtn == null")
-
-        }
-        try {
-            var bbbrtn = checkClassType("dfadefas")
-            Log.d("test", "bbbrtn == $bbbrtn")
-
-            bbbrtn = checkClassType(256)
-            Log.d("test", "bbbrtn == $bbbrtn")
-
-            bbbrtn = checkClassType(null)
-            Log.d("test", "bbbrtn == $bbbrtn")
-
-        } catch(ex: Exception) {
-            Log.d("test", "bbbrtn == null")
-
-        }
+//        printSum(4, 8)
+//
+//        nullCheck();
+//
+//        makeDate();
+//
+//        try {
+//            questionMark("dfadefas")
+//            questionMark(null)
+//
+//        } catch(ex: Exception) {
+//            Log.d("test", "bbbrtn == null")
+//
+//        }
+//        try {
+//            var bbbrtn = checkClassType("dfadefas")
+//            Log.d("test", "bbbrtn == $bbbrtn")
+//
+//            bbbrtn = checkClassType(256)
+//            Log.d("test", "bbbrtn == $bbbrtn")
+//
+//            bbbrtn = checkClassType(null)
+//            Log.d("test", "bbbrtn == $bbbrtn")
+//
+//        } catch(ex: Exception) {
+//            Log.d("test", "bbbrtn == null")
+//
+//        }
     }
 
     /**
@@ -106,5 +113,59 @@ class MainActivity : AppCompatActivity() {
         }
 
         return obj?.length
+    }
+
+    private fun whenExpression(arg: Any) {
+        when(arg){
+            1 ->
+            {
+                Log.d("test", "1")
+                Log.d("test", "2")
+            }
+            "hello" ->
+            {
+                Log.d("test", "hello-1")
+                Log.d("test", "hello-2")
+            }
+            else -> {
+                Log.d("test", "else")
+            }
+        }
+
+    }
+
+
+    private fun forSentence() {
+        var args = listOf("a","b","c")
+
+        for (arg in args) {
+            Log.d("test 1", arg)
+        }
+
+        for (i in args.indices) {
+            Log.d("test 2", args.get(i))
+        }
+
+        var index = 0
+        while (index < args.size) {
+            Log.d("test 3", args.get(index++))
+        }
+    }
+
+    private fun rangeTest() {
+        var y = 56
+        for (xm :Int in 6..y) {
+            Log.d("test", "a")
+        }
+    }
+
+    private fun buildStyle(){
+//        var interArray = IntArray(5).apply { fill(-1) }
+//        var interArray : List<Int> =  listOf(1,2,3)
+        var interArray : Array<Int> =  Array(2,{1})
+        for (arg in interArray) {
+            Log.d("test",  " "+arg)
+        }
+
     }
 }
